@@ -2,7 +2,7 @@
 // https://api.yachtway.com/api/listings/pardo-yachts-p43-itcdpp4254e122
 
 import { YachtDetails } from "@/app/types";
-import { VesselProvider } from "@/components/VesselContext";
+import { VesselProvider, useVessel } from "@/context/vessel-context";
 
 const fetchVessel = async (slug: string): Promise<YachtDetails> => {
   try {

@@ -1,4 +1,8 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+    images: {
+        domains: ['files.yachtway.com'],
+    },
+};
 
 export default nextConfig;

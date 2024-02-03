@@ -91,117 +91,125 @@ export interface LocalMeta {
 }
 
 export interface YachtDetails {
-    generalInfo: GeneralInfo;
-    powerInfo: PowerInfo;
-    photos: Photos;
-    accommodation: Accommodation;
-    technicalInfo: TechnicalInfo;
-    editAccess: boolean;
-    brochure: Media;
-    brandInfo: BrandInfo;
-    modelTypes: string[];
-    brokerDialogId: string | null;
-    dealerDialogId: string | null;
-    isLikedByCurrentUser: boolean;
-    isHidden: boolean;
-    sellInfo: any | null;
-  }
-  
-  interface GeneralInfo {
-    id: string;
-    slug: string;
-    features: string[];
-    make: string;
-    model: string;
-    price: Price;
-    hullNumber: string;
-    year: number;
-    type: string;
-    availableIn: string | null;
-    address: string;
-    country: string;
-    city: string;
-    state: string;
-    coordinates: Coordinates;
-    description: string;
-    saleStatus: string;
-    isCaptainMaintained: boolean;
-    isNeverCharged: boolean;
-    isLikeNew: boolean;
-    isExclusive: boolean;
-    isAvailableForCoBrokerage: boolean;
-    isBrandConnectedToOwner: boolean;
-    isModelPhotosUsed: boolean;
-    video: Media;
-    modelSlug: string;
-    brandId: string;
-    vesselModelId: string;
-  }
-  
-  interface PowerInfo {
-    hasGenerator: boolean;
-    generators: Generator[];
-    type: string;
-    make: string;
-    model: string;
-    hours: number;
-    powerPerEngine: number;
-    fuel: string;
-    count: number;
-    range: number | null;
-    cruiseSpeed: number | null;
-    topSpeed: number;
-  }
-  
-  interface Generator {
-    generatorMake: string;
-    generatorHours: number;
-  }
-  
-  interface Photos {
-    exterior: Media[];
-    interior: Media[];
-    deckLayout: Media[];
-  }
-  
-  interface Accommodation {
-    singleBeds: number;
-    doubleBeds: number;
-    cabins: number;
-    showerWetHead: number;
-    showerDryHead: number;
-  }
-  
-  interface TechnicalInfo {
-    lengthOverall: number;
-    lengthOfWaterline: number | null;
-    beam: number;
-    draft: number;
-    dryWeight: number;
-    displacementWeight: number | null;
-    standardDraft: number | null;
-    optionalDraft: number | null;
-    keelWeight: number | null;
-    mainSail: string | null;
-    jib: string | null;
-    spinnaker: string | null;
-  }
-  
-  interface Media {
-    id: string;
-    url: string;
-    type: string;
-    createdAt: string;
-    fileName: string;
-    originalSize: number;
-  }
-  
-  interface BrandInfo {
-    name: string;
-    slug: string;
-    country: string;
-    numberOfModels: number;
-    banner: Media;
-    createdByAdmin: boolean;
-  }
-  
+  generalInfo: GeneralInfo;
+  powerInfo: PowerInfo;
+  photos: {
+    exterior: Photo[];
+    interior: Photo[];
+    deckLayout: Photo[];
+  };
+  accommodation: Accommodation;
+  technicalInfo: TechnicalInfo;
+  editAccess: boolean;
+  brochure: Media;
+  brandInfo: BrandInfo;
+  modelTypes: string[];
+  brokerDialogId: string | null;
+  dealerDialogId: string | null;
+  isLikedByCurrentUser: boolean;
+  isHidden: boolean;
+  sellInfo: any | null;
+}
+
+interface GeneralInfo {
+  id: string;
+  slug: string;
+  features: string[];
+  make: string;
+  model: string;
+  price: Price;
+  hullNumber: string;
+  year: number;
+  type: string;
+  availableIn: string | null;
+  address: string;
+  country: string;
+  city: string;
+  state: string;
+  coordinates: Coordinates;
+  description: string;
+  saleStatus: string;
+  isCaptainMaintained: boolean;
+  isNeverCharged: boolean;
+  isLikeNew: boolean;
+  isExclusive: boolean;
+  isAvailableForCoBrokerage: boolean;
+  isBrandConnectedToOwner: boolean;
+  isModelPhotosUsed: boolean;
+  video: Media;
+  photos: {
+    exterior: Photo[];
+    interior: Photo[];
+    deckLayout: Photo[];
+  };
+  modelSlug: string;
+  brandId: string;
+  vesselModelId: string;
+}
+
+interface PowerInfo {
+  hasGenerator: boolean;
+  generators: Generator[];
+  type: string;
+  make: string;
+  model: string;
+  hours: number;
+  powerPerEngine: number;
+  fuel: string;
+  count: number;
+  range: number | null;
+  cruiseSpeed: number | null;
+  topSpeed: number;
+}
+
+interface Generator {
+  generatorMake: string;
+  generatorHours: number;
+}
+
+interface Photos {
+  exterior: Media[];
+  interior: Media[];
+  deckLayout: Media[];
+}
+
+interface Accommodation {
+  singleBeds: number;
+  doubleBeds: number;
+  cabins: number;
+  showerWetHead: number;
+  showerDryHead: number;
+}
+
+interface TechnicalInfo {
+  lengthOverall: number;
+  lengthOfWaterline: number | null;
+  beam: number;
+  draft: number;
+  dryWeight: number;
+  displacementWeight: number | null;
+  standardDraft: number | null;
+  optionalDraft: number | null;
+  keelWeight: number | null;
+  mainSail: string | null;
+  jib: string | null;
+  spinnaker: string | null;
+}
+
+interface Media {
+  id: string;
+  url: string;
+  type: string;
+  createdAt: string;
+  fileName: string;
+  originalSize: number;
+}
+
+interface BrandInfo {
+  name: string;
+  slug: string;
+  country: string;
+  numberOfModels: number;
+  banner: Media;
+  createdByAdmin: boolean;
+}

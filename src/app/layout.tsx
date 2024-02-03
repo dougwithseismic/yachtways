@@ -25,7 +25,7 @@ export default function RootLayout({
           <div className="flex w-64 border-r border-neutral-100 p-4">
             Sidebar Content
           </div>
-          <main className="flex-grow p-4">{children}</main>
+          <main className="flex-grow">{children}</main>
         </div>
 
         <footer className="h-16 p-4 flex items-center shadow-md">Footer</footer>

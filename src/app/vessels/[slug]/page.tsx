@@ -5,9 +5,15 @@ import { YachtDetails } from "@/app/types";
 import { VesselProvider } from "@/components/VesselContext";
 
 const fetchVessel = async (slug: string): Promise<YachtDetails> => {
-  const response = await fetch(`https://api.yachtway.com/api/listings/${slug}`);
-  const data = await response.json();
-  return data;
+  try {
+    const response = await fetch(
+      `https://api.yachtway.com/api/listings/${slug}`
+    );
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    throw new Error("Failed to fetch vessel data");
+  }
 };
 
 const Page = async (props: any) => {

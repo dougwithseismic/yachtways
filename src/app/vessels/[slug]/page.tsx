@@ -32,7 +32,7 @@ const Page = async (props: any) => {
     <VesselProvider vessel={yachtDetails}>
       <main className="flex min-h-screen flex-col">
         <TopBar />
-        <ImageMasonry />
+        <ImageMasonry images={yachtDetails.photos} />
       </main>
     </VesselProvider>
   );
